@@ -43,8 +43,29 @@ Dans ce premier TP, on va se familiariser avec quelques notions Python, en faisa
 
 🌞 **Déployez-moi ça dans une VM Rocky**
 
-- git clone du dépôt git de code, dans la VM, pour récupérer le fichier `network.py` dans la VM
-- install/mise à jour de Python si nécessaire
-- exécution du code, le code doit fonctionner normalement
+```bash
+[et0@localhost ~]$ pip3 install psutil
+Defaulting to user installation because normal site-packages is not writeable
+Collecting psutil
+  Downloading psutil-6.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (292 kB)
+     |████████████████████████████████| 292 kB 1.1 MB/s 
+Installing collected packages: psutil
+  WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+  distutils: /home/patron/.local/lib/python3.9/site-packages
+  sysconfig: /home/patron/.local/lib64/python3.9/site-packages
+  WARNING: Additional context:
+  user = True
+  home = None
+  root = None
+  prefix = None
+Successfully installed psutil-6.0.0
+WARNING: You are using pip version 21.2.3; however, version 24.2 is available.
+You should consider upgrading via the '/usr/bin/python -m pip install --upgrade pip' command.
+```
+```bash
+[et0@localhost TP3]$ python network.py ping 8.8.8.8
+UP !
 
-> *On va dév des applications client/serveur dans la suite des TPs. Pour être proche d'un cas réel, on fera ça avec plusieurs VMs. Donc c'est pour commencer à vous habituer à bosser avec ;)*
+[et0@localhost TP3]$ sudo cat /tmp/network_tp3/network.log
+2024-10-10 11:18:43 [INFO] Command ping called successfully with argument 8.8.8.8.
+```
